@@ -3,9 +3,119 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hi</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#212121">
+  <title>bluecat21</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #fafafa;
+      --foreground: rgb(0 0 0 / 87%);
+      --muted: #616161;
+      --accent: #1565c0;
+      --navigation: #212121;
+      --active: #64b5f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: Roboto, "Noto Sans", sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--navigation);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 864px;
+      min-height: 64px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .brand {
+      color: #fff;
+      font-size: 1.125rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .home {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      color: var(--active);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 864px;
+      margin: 0 auto;
+      padding: 80px 16px;
+    }
+
+    .intro {
+      max-width: 720px;
+      padding: 8px 0 8px 24px;
+      border-left: 4px solid var(--accent);
+      animation: appear 500ms ease-out both;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .intro { animation: none; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #121212;
+        --foreground: rgb(255 255 255 / 87%);
+        --muted: #9f9f9f;
+        --accent: #90caf9;
+        --active: #90caf9;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main { padding-top: 56px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-  <p>hi</p>
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="brand" href="/">bluecat21</a>
+      <a class="home" href="/" aria-current="page">Home</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="welcome">
+      <h1 id="welcome">This is the website of bluecat21.</h1>
+    </section>
+  </main>
 </body>
 </html>
