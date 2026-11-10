@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root {
+    --bg-color: #fdfcf8;
+    --text-color: #1a1a1a;
+    --accent-color: #d1cfc8;
+    --border-color: #d1cfc8;
+    --secondary-bg: #f5f3ed;
+    --transition-speed: 0.3s;
+    --radius: 6px;
+    --selection-bg: #d1cfc8;
+    --selection-text: #1a1a1a;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0ddd5;
+    --accent-color: #4a4a4a;
+    --border-color: #333333;
+    --secondary-bg: #1a1a1a;
+    --selection-bg: #333333;
+    --selection-text: #e0ddd5;
+}
+
+::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+}
+::-moz-selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.2s, color 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    opacity: 1;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 65ch;
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border-radius: var(--radius);
+    transition: background-color var(--transition-speed);
+}
+
+.card:hover {
+    background-color: var(--secondary-bg);
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--text-color);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius);
+}
+
+input, 
+textarea, 
+select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--secondary-bg);
+}
+
+
+footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 0;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+</style>
+<title>DW Video Download link Finder</title>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo"><strong style="font-size: 1.2rem;">DW Video Download link Finder</strong></div>
+            <nav>
+                <button class="theme-toggle" id="themeSwitcher">Toggle Theme</button>
+            </nav>
+        </header>
+
+        <main>
+            <h1 id="about">DW Video Download link Finder</h1>
+            <p>Enter a Deutschlandlabor lesson URL to construct its HLS playlist URL.</p>
+
+            <div class="card" id="finder">
+                <form id="dwForm">
+                    <label for="lessonUrl">DW lesson URL</label>
+                    <input
+                        id="lessonUrl"
+                        type="url"
+                        required
+                        placeholder="https://learngerman.dw.com/de/11-m%C3%BCll/l-18869401"
+                    >
+                    <button class="btn" type="submit">Find playlist</button>
+                </form>
+
+                <p id="status" role="status" aria-live="polite"></p>
+                <p id="result"></p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const switcher = document.getElementById('themeSwitcher');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        html.setAttribute('data-theme', savedTheme);
+
+        switcher.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        document.getElementById('dwForm').addEventListener('submit', event => {
+            event.preventDefault();
+
+            const status = document.getElementById('status');
+            const result = document.getElementById('result');
+            result.replaceChildren();
+
+            try {
+                const pageUrl = new URL(
+                    document.getElementById('lessonUrl').value.trim()
+                );
+
+                if (pageUrl.hostname !== 'learngerman.dw.com') {
+                    throw new Error('Enter a learngerman.dw.com lesson URL.');
+                }
+
+                const match = pageUrl.pathname.match(/\/de\/(\d+)-([^/]+)/);
+                if (!match) {
+                    throw new Error('That URL does not match the expected lesson format.');
+                }
+
+                const [, rawNumber, encodedSlug] = match;
+const number = rawNumber.padStart(2, '0');
+
+                const slug = decodeURIComponent(encodedSlug)
+                    .toLowerCase()
+                    .replace(/ä/g, 'ae')
+                    .replace(/ö/g, 'oe')
+                    .replace(/ü/g, 'ue')
+                    .replace(/ß/g, 'ss')
+                    .replace(/[^a-z0-9]+/g, '_')
+                    .replace(/^_|_$/g, '');
+
+                const mediaUrl =
+                    `https://hlsvod.dw.com/i/Events/mp4/deutschlandlabor/` +
+                    `folge_${number}_${slug}_deutschlandlabor_,sd,hd,.mp4.csmil/master.m3u8`;
+
+                status.textContent = 'Playlist URL:';
+
+                const link = document.createElement('a');
+                link.href = mediaUrl;
+                link.textContent = mediaUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                result.appendChild(link);
+            } catch (error) {
+                status.textContent = error.message || 'Could not create the playlist URL.';
+            }
+        });
+    </script>
+</body>
+</html>
+
